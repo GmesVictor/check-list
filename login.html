@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área Restrita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm text-center">
+    <h1 class="text-2xl font-bold mb-4 text-gray-800">Acesso Restrito</h1>
+    <input id="codigo" type="password" placeholder="Digite o código" class="w-full p-3 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <button onclick="verificarCodigo()" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition">Entrar</button>
+    <p id="erro" class="text-red-600 mt-3 hidden">Código incorreto.</p>
+  </div>
+
+  <script>
+    function verificarCodigo() {
+      const codigo = document.getElementById('codigo').value;
+      const codigoCorreto = '47613'; // Altere aqui para sua senha pessoal
+
+      if (codigo === codigoCorreto) {
+        window.location.href = 'src/plano.html'; // Caminho atualizado
+      } else {
+        document.getElementById('erro').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
